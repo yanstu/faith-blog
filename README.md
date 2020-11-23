@@ -4,11 +4,13 @@
 
 > Demo预览地址：[https://blog.yanstu.cn](https://blog.yanstu.cn)
 
-> 默认账号：admin
+> 默认账号：`admin`
 >
-> 默认密码：111111
+> 默认密码：`111111`
 
 ## 效果图：
+
+外链：[https://pan.yanstu.cn/%E9%A1%B9%E7%9B%AE/Faith-Blog/](https://pan.yanstu.cn/%E9%A1%B9%E7%9B%AE/Faith-Blog/)
 
 | CN   | ![home](images/cn/cn_home.jpg) | ![home](images/cn/cn_archive.jpg) | ![home](images/cn/cn_about.jpg) | ![home](images/cn/cn_home2.jpg)   | ![home](images/cn/cn_login.jpg) | ![home](images/cn/cn_publish.jpg) |
 | ---- | ------------------------------ | --------------------------------- | ------------------------------- | --------------------------------- | ------------------------------- | --------------------------------- |
