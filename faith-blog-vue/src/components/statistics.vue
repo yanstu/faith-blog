@@ -19,6 +19,12 @@
 </template>
 
 <script>
+/**
+ * 博客统计组件
+ * 接口地址：
+ *       - 博客统计 http://127.0.0.1:8080/blog/total
+ */
+
 export default {
   name: "statistics",
   data() {

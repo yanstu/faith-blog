@@ -1,54 +1,84 @@
 <template>
-	<div class="archive">
-		<div class="count">{{this.$route.params.name || $t('header.archive')}}：234{{$t('archive.article')}}</div>
-		<el-timeline>
-			<el-timeline-item v-for="(activity, index) in activities" :key="index" :color="activity.color" :timestamp="activity.timestamp" placement="top" @mouseenter="hoverLine(activity)">
-				<div class="line-item">
-					<router-link to="/article" tag="span">{{activity.content}}</router-link>
-				</div>
-			</el-timeline-item>
-		</el-timeline>
-	</div>
+  <div class="archive">
+    <div
+      class="count"
+      v-for="(year,index) in activities"
+      :key="index"
+    >{{ index }}
+      <br />
+      <br />
+
+      <div
+        class="block"
+        v-for="(month,ind) in year"
+        :key="ind"
+      >
+        <el-timeline>
+          <el-timeline-item
+            :timestamp="ind"
+            placement="top"
+          >
+            <el-card
+              style="margin-top:10px"
+              v-for="(title,inx) in month"
+              :key="inx"
+            >
+              <el-link
+                :href="'/article/'+title.id"
+                target="_blank"
+              >
+                <p>{{ title.title }}</p>
+              </el-link>
+            </el-card>
+          </el-timeline-item>
+        </el-timeline>
+      </div>
+
+    </div>
+  </div>
 </template>
 
+
 <script>
-	export default {
-		name: 'archive',
-		data() {
-			return {
-				activities: [{
-					content: 'springBoot整合Redis',
-					timestamp: '2018-04-15'
-				}, {
-					content: 'Activiti工作流',
-					timestamp: '2018-04-13'
-				}, {
-					content: 'Vue路由',
-					timestamp: '2018-04-11'
-				}]
-			};
-		},
-		methods: {
-			hoverLine(activity) {
-				activity.color = "#409eff"
-			}
-		}
-	}
+/**
+ * 文章归档页
+ * 接口地址：
+ *       - 获取全部归档 http://127.0.0.1:8080/archive
+ */
+
+export default {
+  name: "archive",
+  data() {
+    return {
+      activities: [],
+    };
+  },
+  methods: {
+    hoverLine(activity) {
+      activity.color = "#409eff";
+    },
+  },
+  created() {
+    this.$axios.get("/archive").then((res) => {
+      this.activities = res.data.data;
+    });
+  },
+};
 </script>
 
 <style scoped>
-	.line-item {
-		display: inline-block;
-	}
-	
-	.line-item:hover {
-		cursor: pointer;
-		color: #409EFF;
-	}
-	
-	.count {
-		margin-bottom: 20px;
-		font-size: 20px;
-		color: #E6A23C;
-	}
+.line-item {
+  display: inline-block;
+}
+
+.line-item:hover {
+  cursor: pointer;
+  color: #409eff;
+}
+
+.count {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #e6a23c;
+}
 </style>

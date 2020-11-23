@@ -23,19 +23,19 @@
         <el-menu-item
           v-if="!hasLogin"
           index="/login"
-        >登录</el-menu-item>
+        >{{ $t('header.login') }}</el-menu-item>
         <el-menu-item
           v-if="!hasLogin"
           index="/login"
-        >注册</el-menu-item>
+        >{{ $t('header.register') }}</el-menu-item>
         <el-menu-item
           v-if="hasLogin"
           index="/blog/add"
-        >发表博客</el-menu-item>
+        >{{ $t('header.articles') }}</el-menu-item>
         <el-menu-item
           v-if="hasLogin"
           @click="logout"
-        >退出登录</el-menu-item>
+        >{{ $t('header.logout') }}</el-menu-item>
       </el-submenu>
 
       <el-submenu>
@@ -48,6 +48,12 @@
 </template>
 
 <script>
+/**
+ * 网站头部组件
+ * 接口地址：
+ *       - 退出登录 http://127.0.0.1:8080/logout
+ */
+
 export default {
   data() {
     return {

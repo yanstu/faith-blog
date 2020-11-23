@@ -1,19 +1,11 @@
-# fastsearch-vue
+# faith-blog-vue
 
-## Project setup
+## npm依赖安装
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 编译和热重装进行预览
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

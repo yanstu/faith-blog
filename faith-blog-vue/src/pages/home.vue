@@ -38,7 +38,7 @@
             <el-row class="art-body">
               <div class="side-img hidden-sm-and-down"><img
                   class="art-banner"
-                  src="../assets/images/vue.jpg"
+                  src="https://api.ixiaowai.cn/mcapi/mcapi.php"
                 ></div>
               <div class="side-abstract">
                 <div
@@ -105,6 +105,12 @@
 </template>
 
 <script>
+/**
+ * 博客首页
+ * 接口地址：
+ *       - 文章分页 http://127.0.0.1:8080/blogs/{currentPage}
+ */
+
 import aboutme from "../components/aboutme";
 import friend from "../components/friend";
 import tag from "../components/tag";

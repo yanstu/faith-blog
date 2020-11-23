@@ -14,6 +14,12 @@
 </template>
 
 <script>
+/**
+ * 友情链接组件
+ * 接口地址：
+ *       - 获取全部友情链接 http://127.0.0.1:8080/link/all
+ */
+
 export default {
   name: 'friend',
   data() {

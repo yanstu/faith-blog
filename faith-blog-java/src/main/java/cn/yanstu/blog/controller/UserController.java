@@ -26,7 +26,6 @@ public class UserController {
      * @param id id
      * @return 用户
      */
-    //@RequiresAuthentication
     @GetMapping("/{id}")
     public Result index(@PathVariable(name = "id") Integer id) {
         User user = userService.getById(id);

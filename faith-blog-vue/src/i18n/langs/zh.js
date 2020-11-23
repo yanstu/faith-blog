@@ -3,6 +3,8 @@ module.exports = {
     home: '首页',
     login: '登录',
     register: '注册',
+    articles: '发表博客',
+    logout: '退出登录',
     archive: '归档',
     about: '关于',
     language: '语言',
@@ -40,9 +42,11 @@ module.exports = {
     exchange: '互换友链',
   },
   archive: {
-    article: '篇',
+    
   },
   about: {
+    source: '开源地址',
+		links: '申请友链',
     contactMe: '给我留言',
     yourName: '称谓',
     email: '邮箱',

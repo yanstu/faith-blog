@@ -73,6 +73,13 @@
 </template>
 
 <script>
+/**
+ * 博客添加/编辑页
+ * 接口地址：
+ *       - 查询博客文章 http://127.0.0.1:8080/blog/{blogId}
+ *       - 添加/编辑 http://127.0.0.1:8080/blog/edit
+ */
+
 export default {
   name: "blogedit",
   components: {},
@@ -91,8 +98,8 @@ export default {
           { required: true, message: "请输入标题", trigger: "blur" },
           {
             min: 3,
-            max: 32,
-            message: "长度在 3 到 32 个字符",
+            max: 108,
+            message: "长度在 3 到 108 个字符",
             trigger: "blur",
           },
         ],

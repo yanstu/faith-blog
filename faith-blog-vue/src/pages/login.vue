@@ -44,6 +44,12 @@
 </template>
 
 <script>
+/**
+ * 登录页面
+ * 接口地址：
+ *       - 博客登录 http://127.0.0.1:8080/login
+ */
+
 export default {
   name: "login",
   data() {
@@ -109,10 +115,7 @@ export default {
               //存储信息
               this.$store.commit("SET_TOKEN", jwt);
               this.$store.commit("SET_USERINFO", userInfo);
-              //从store获取用户信息
-              console.log(this.$store.getters.getters);
               //跳转到博客主页面
-              //this.$router.push("/");
               window.location.href = "/";
             })
             .catch((err) => {

@@ -3,6 +3,8 @@ module.exports = {
         home: 'Home',
         login: 'Login',
         register: 'Register',
+		articles: 'Publish articles',
+		logout: 'Log out',
         archive: 'Archive',
         about: 'About',
         language: 'Language',
@@ -40,9 +42,11 @@ module.exports = {
     	exchange: 'Exchange'
     },
     archive: {
-    	article: 'articles'
+    	
     },
     about: {
+		source: 'Open Source',
+		links: 'Apply for links',
     	contactMe: 'Contact Me',
     	yourName: 'Name',
     	email: 'Email',

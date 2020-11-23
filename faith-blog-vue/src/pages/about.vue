@@ -6,18 +6,18 @@
       justify="center"
     >
       <el-col :span="16">
-        <h5 class="title"><i class="el-icon-star-on"></i>开源地址</h5>
+        <h5 class="title"><i class="fa fa-github"></i> {{ $t('about.source') }}</h5>
         <div class="statement">
-          <div class="item">GitHub：<a href="https://github.com/yanstu/vueblog">https://github.com/yanstu/vueblog</a></div>
+          <div class="item">GitHub：<a href="https://github.com/yanstu/faith-blog">https://github.com/yanstu/faith-blog</a></div>
         </div>
-        <h5 class="title"><i class="el-icon-link"></i>申请友链</h5>
+        <h5 class="title"><i class="el-icon-link"></i> {{ $t('about.links') }}</h5>
         <div class="statement">
           <div class="item"><a
               :href="this.$axios.defaults.baseURL+'apply'"
               v-text="this.$axios.defaults.baseURL+'apply'"
             ></a></div>
         </div>
-        <h5 class="title"><i class="el-icon-star-on"></i>{{$t('about.contactMe')}}</h5>
+        <h5 class="title"><i class="fa fa-wechat"></i> {{$t('about.contactMe')}}</h5>
         <el-card shadow="always">
           <el-form
             label-position="left"
@@ -110,6 +110,9 @@ export default {
         }
       });
     },
+  },
+  created() {
+    console.log(process.env)
   },
 };
 </script>

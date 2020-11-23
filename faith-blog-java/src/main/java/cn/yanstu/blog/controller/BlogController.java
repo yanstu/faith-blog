@@ -6,7 +6,6 @@ import cn.hutool.core.lang.Assert;
 import cn.hutool.core.map.MapUtil;
 import cn.yanstu.blog.common.lang.Result;
 import cn.yanstu.blog.entity.Blog;
-import cn.yanstu.blog.entity.Link;
 import cn.yanstu.blog.mapper.BlogMapper;
 import cn.yanstu.blog.service.BlogService;
 import cn.yanstu.blog.util.ShiroUtil;
@@ -97,6 +96,11 @@ public class BlogController {
         return Result.succ(null);
     }
 
+    /**
+     * 博客统计
+     *
+     * @return json
+     */
     @GetMapping("/blog/total")
     public Result getTotal() {
         Integer totalViews = blogService.getOne(new QueryWrapper<Blog>().select("sum(views) as views")).getViews();
@@ -107,5 +111,90 @@ public class BlogController {
         return Result.succ(map);
     }
 
+    /*
+
+    {
+    "code": 200,
+    "msg": "操作成功",
+    "data": {
+        "2020": {
+            "11 - 21": [
+                {
+                    "id": 26,
+                    "userId": 1,
+                    "title": "啊沙发上",
+                    "description": "山豆根山豆根第三个是单独",
+                    "content": "# 士大夫士大夫士大夫大师傅似的 \n>saasafas",
+                    "created": "2020-11-21 19:02:40",
+                    "modified": "2020-11-21 19:02:37",
+                    "status": 0,
+                    "views": 15,
+                    "top": true
+                },
+                {
+                    "id": 25,
+                    "userId": 1,
+                    "title": "Flutter 获取屏幕宽高",
+                    "description": "Flutter 获取屏幕宽高",
+                    "content": "屏幕宽度：\n>MediaQuery.of(context).size.width\n\n屏幕高度：\n\n>MediaQuery.of(context).size.height",
+                    "created": "2020-11-21 19:02:36",
+                    "modified": "2020-11-21 19:16:04",
+                    "status": 0,
+                    "views": 24,
+                    "top": false
+                }
+            ],
+            "2 - 21": [
+                {
+                    "id": 27,
+                    "userId": 1,
+                    "title": "大飒飒发",
+                    "description": "啊沙发沙发沙发",
+                    "content": "士大夫士大夫多福多寿",
+                    "created": "2020-02-21 19:24:51",
+                    "modified": "2020-02-21 19:24:51",
+                    "status": 0,
+                    "views": 1,
+                    "top": false
+                }
+            ]
+        }
+    }
 }
 
+     */
+
+    /**
+     * 文章归档
+     *
+     * @return json
+     */
+    @GetMapping("/archive")
+    public Result archive() {
+        List<Blog> years = blogMapper.selectList(new QueryWrapper<Blog>()
+                .select("DISTINCT YEAR(`created`) AS `views`"));
+        Map<Integer, Map<String, Object>> maps = new HashMap<>();
+        System.out.println(years);
+        for (Blog blog : years) {
+            Integer year = blog.getViews();
+            List<Blog> months = blogMapper
+                    .selectList(new QueryWrapper<Blog>()
+                            .select("DISTINCT YEAR(`created`) AS `year`,MONTH(`created`) AS `views`,DAY(`created`) AS `status`")
+                            .eq("YEAR(`created`)", year)
+                            .orderByDesc("created"));
+            Map<String, Object> map = new HashMap<>();
+            for (Blog month : months) {
+                List<Blog> articles = blogMapper
+                        .selectList(new QueryWrapper<Blog>()
+                                .select("*")
+                                .eq("YEAR(`created`)", year)
+                                .eq("MONTH(`created`)", month.getViews())
+                                .eq("DAY(`created`)", month.getStatus())
+                                .orderByDesc("created"));
+                map.put(month.getViews() + " - " + month.getStatus(), articles);
+            }
+            maps.put(year, map);
+        }
+        return Result.succ(maps);
+    }
+}

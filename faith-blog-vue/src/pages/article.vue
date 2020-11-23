@@ -13,22 +13,18 @@
           <h2 class="text-center"><strong>{{ blog.title }}</strong></h2>
           <!-- 描述：文章信息 -->
 
-          <div class="text-center timeAndView">
-            <el-avatar
-              :size="17"
-              src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-            ></el-avatar>
-            Luckyx
-            <span class="article-time">
-              <i class="el-icon-time"></i>
-              发表于：<span>{{ blog.created }}</span>
-            </span>
-            &nbsp;|&nbsp;
-            <span class="article-views">
-              <i class="el-icon-view"></i>
-              阅读量：<span>{{ blog.views }}</span>
-            </span>
-          </div>
+          <el-row class="art-info d-flex align-items-center justify-content-start">
+            <p
+              class="art-time"
+              v-format="'YYYY年MM月DD日 '"
+            > <i class="el-icon-time"></i> {{ $t('home.time') }}{{blog.created | moment}} </p>
+            <p class="art-time">
+              <i class="fa fa-eye"></i> {{ blog.views }}{{ $t('home.views') }}
+            </p>
+            <p class="art-time"><i class="fa fa-tags"> </i>
+              <el-link href="">swagger2</el-link>
+            </p>
+          </el-row>
 
           <p class="abstract">
             {{ blog.description }}
@@ -61,9 +57,9 @@
           </div>
         </el-card>
         <div id="statement">
-          <div class="item">{{$t('article.author')}}：{{ article.author }}</div>
+          <div class="item">{{$t('article.author')}}：faithx</div>
           <div class="item">{{$t('article.originalLink')}}：
-            <a href="https://www.fengziy.cn/">{{ article.originalLink }}</a>
+            <a :href="article.originalLink">{{ article.originalLink }}</a>
           </div>
           <div class="item">{{$t('article.copyright')}}：本博客所有文章除特别声明外，转载请注明出处！</div>
         </div>
@@ -73,6 +69,13 @@
 </template>
 
 <script>
+/**
+ * 文章详情页
+ * 接口地址：
+ *       - 获取全部归档 http://127.0.0.1:8080/blog/{blogId}
+ *       - 增加博客文章浏览量 http://127.0.0.1:8080/view/{blogId}
+ */
+
 import "github-markdown-css/github-markdown.css";
 
 export default {
@@ -103,14 +106,11 @@ export default {
   created() {
     const blogId = this.$route.params.blogId;
     if (blogId) {
-      this.article.author = this.$store.getters.getUser.nickname;
       this.article.originalLink = window.location.href;
       //增加博客文章浏览量
       this.$axios
         .get("/view/" + blogId)
-        .then((res) => {
-          console.log(res);
-        })
+        .then((res) => {})
         .catch((err) => {
           console.error(err);
         });
@@ -145,7 +145,26 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://cdn.bootcss.com/github-markdown-css/2.10.0/github-markdown.min.css');
+@import url("https://cdn.bootcss.com/github-markdown-css/2.10.0/github-markdown.min.css");
+.art-info {
+  font-size: 14px;
+}
+#side .item {
+  margin-bottom: 30px;
+}
+
+.art-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.art-item .star {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .mblog {
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -154,7 +173,7 @@ export default {
 }
 #artcle-info {
   padding: 20px;
-  background-image: url(../assets/images/vue.jpg);
+  background-image: url(http://lorempixel.com/1200/400/);
   margin-bottom: 20px;
 }
 
@@ -186,5 +205,11 @@ img.has {
   border-left: 3px solid #f56c6c;
   padding: 20px;
   background-color: #ebeef5;
+}
+.art-time {
+  margin-right: 10px;
+}
+i {
+  margin-right: 3px;
 }
 </style>

@@ -7,8 +7,8 @@
     >
       <el-col :span="16">
         <h5 class="title"><i class="el-icon-circle-plus-outline"></i> {{$t('apply.process')}}</h5>
-        
-		<el-divider></el-divider>
+
+        <el-divider></el-divider>
 
         <el-card shadow="hover">
           <el-steps
@@ -37,7 +37,10 @@
                 class="item"
                 v-text="$t('apply.blogLink')+'：'+this.$axios.defaults.baseURL"
               ></div>
-              <div class="item" v-text="$t('apply.nickName') + '：Faithx'"></div>
+              <div
+                class="item"
+                v-text="$t('apply.nickName') + '：Faithx'"
+              ></div>
               <div class="item">{{$t('apply.introduction')}}：海上碧云断，单于秋色来。</div>
             </div>
           </div>
