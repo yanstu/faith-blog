@@ -2,7 +2,7 @@
 
 > 一个基于SpringBoot + Vue开发的轻量级`前后端分离`博客项目。
 
-> Demo预览地址：[https://blog.yanstu.cn](https://blog.yanstu.cn)
+> Demo预览地址：http://106.53.60.147/
 
 > 默认账号：`admin`
 >
@@ -10,7 +10,7 @@
 
 ## 效果图：
 
-外链：[https://pan.yanstu.cn/%E9%A1%B9%E7%9B%AE/Faith-Blog/](https://pan.yanstu.cn/%E9%A1%B9%E7%9B%AE/Faith-Blog/)
+外链：http://106.53.60.147:9008/%E9%A1%B9%E7%9B%AE/Faith-Blog/](http://106.53.60.147:9008/%E9%A1%B9%E7%9B%AE/Faith-Blog/)
 
 | CN   | ![home](images/cn/cn_home.jpg) | ![home](images/cn/cn_archive.jpg) | ![home](images/cn/cn_about.jpg) | ![home](images/cn/cn_home2.jpg)   | ![home](images/cn/cn_login.jpg) | ![home](images/cn/cn_publish.jpg) |
 | ---- | ------------------------------ | --------------------------------- | ------------------------------- | --------------------------------- | ------------------------------- | --------------------------------- |
