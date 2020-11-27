@@ -10,7 +10,7 @@
 
 ## 效果图：
 
-外链：http://106.53.60.147:9008/%E9%A1%B9%E7%9B%AE/Faith-Blog/](http://106.53.60.147:9008/%E9%A1%B9%E7%9B%AE/Faith-Blog/)
+外链：http://106.53.60.147:9008/MyProjects/Faith-Blog/](http://106.53.60.147:9008/MyProjects/Faith-Blog/)
 
 | CN     | ![home](images/cn/cn_home.jpg) | ![home](images/cn/cn_archive.jpg) | ![home](images/cn/cn_about.jpg) | ![home](images/cn/cn_home2.jpg)   | ![home](images/cn/cn_login.jpg) | ![home](images/cn/cn_publish.jpg) |
 | ------ | ------------------------------ | --------------------------------- | ------------------------------- | --------------------------------- | ------------------------------- | --------------------------------- |
