@@ -1,0 +1,23 @@
+@media screen and (max-width: 850px) {
+  .wapnone {
+    display: none;
+  }
+  .art-more {
+    margin-top: 15px;
+  }
+  .d-flex {
+    display: block;
+  }
+  .art-time {
+    margin-bottom: 5px;
+  }
+  .drawerBtn {
+    display: block;
+    width: 65%;
+    text-align: right;
+  }
+  .drawerBtn i {
+    margin-top: 4px;
+    font-size: 18px;
+  }
+}
