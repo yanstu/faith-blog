@@ -5,20 +5,20 @@
       type="flex"
       justify="center"
     >
-      <el-col :span="16">
+      <el-col :span="16" :xs="24">
         <h5 class="title"><i class="fa fa-github"></i> {{ $t('about.source') }}</h5>
-        <div class="statement">
+        <div class="statement _index">
           <div class="item">GitHub：<a href="https://github.com/yanstu/faith-blog">https://github.com/yanstu/faith-blog</a></div>
         </div>
         <h5 class="title"><i class="el-icon-link"></i> {{ $t('about.links') }}</h5>
-        <div class="statement">
+        <div class="statement _index">
           <div class="item"><a
               :href="this.$axios.defaults.baseURL+'apply'"
               v-text="this.$axios.defaults.baseURL+'apply'"
             ></a></div>
         </div>
         <h5 class="title"><i class="fa fa-wechat"></i> {{$t('about.contactMe')}}</h5>
-        <el-card shadow="always">
+        <el-card shadow="always" class="_index">
           <el-form
             label-position="left"
             :rules="rules"

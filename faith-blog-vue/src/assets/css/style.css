@@ -26,4 +26,14 @@ body {
 }
 ._index {
   z-index: 1;
+  position: relative;
+}
+.drawerBtn {
+  display: none;
+}
+._title {
+  font-size: 16px;
+}
+._content {
+  font-size: 14px;
 }

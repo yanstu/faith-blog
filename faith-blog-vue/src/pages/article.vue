@@ -7,37 +7,38 @@
     >
       <el-col
         :span="16"
-        class="mblog"
+        class="mblog _index"
       >
         <div id="artcle-info">
-          <h2 class="text-center"><strong>{{ blog.title }}</strong></h2>
+          <h2 class="text-center _content"><strong>{{ blog.title }}</strong></h2>
           <!-- 描述：文章信息 -->
 
           <el-row class="art-info d-flex align-items-center justify-content-start">
             <p
-              class="art-time"
+              class="art-time _content"
               v-format="'YYYY年MM月DD日 '"
             > <i class="el-icon-time"></i> {{ $t('home.time') }}{{blog.created | moment}} </p>
-            <p class="art-time">
+            <p class="art-time _content">
               <i class="fa fa-eye"></i> {{ blog.views }}{{ $t('home.views') }}
             </p>
-            <p class="art-time"><i class="fa fa-tags"> </i>
-              <el-link href="">swagger2</el-link>
+            <p class="art-time "><i class="fa fa-tags"> </i>
+              &nbsp;
+              <el-tag size="mini">java</el-tag>
             </p>
           </el-row>
 
-          <p class="abstract">
+          <p class="abstract _content">
             {{ blog.description }}
           </p>
         </div>
 
         <el-card
-          class="box-card"
+          class="box-card "
           shadow="always"
         >
           <div
             slot="header"
-            class="clearfix"
+            class="clearfix _content"
           >
             <span>最后修改时间：{{ blog.modified }}</span>
             <el-link
@@ -56,7 +57,10 @@
           >
           </div>
         </el-card>
-        <div id="statement">
+        <div
+          id="statement"
+          class="_content"
+        >
           <div class="item">{{$t('article.author')}}：faithx</div>
           <div class="item">{{$t('article.originalLink')}}：
             <a :href="article.originalLink">{{ article.originalLink }}</a>
@@ -168,12 +172,12 @@ export default {
 .mblog {
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
-  min-height: 700px;
+  min-height: 500px;
   padding: 20px 15px;
 }
 #artcle-info {
   padding: 20px;
-  background-image: url(http://lorempixel.com/1200/400/);
+  background-image: url(https://api.vvhan.com/api/bing?type=sj);
   margin-bottom: 20px;
 }
 

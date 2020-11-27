@@ -10,6 +10,24 @@
         :xs="24"
       >
 
+        <!-- 首页轮播图开始 -->
+
+        <el-carousel
+          :interval="4000"
+          type="card"
+          height="200px"
+        >
+
+          <el-carousel-item
+            v-for="img in imgs"
+            :key="img"
+          >
+            <el-image :src="img"></el-image>
+          </el-carousel-item>
+        </el-carousel>
+
+        <!-- 首页轮播图结束 -->
+
         <el-row
           class="art-item _index"
           v-for="blog in blogs"
@@ -44,11 +62,11 @@
               <div class="side-abstract">
                 <div
                   style="text-indent:2em"
-                  class="art-abstract"
+                  class="art-abstract _content"
                 >
                   {{ blog.description }}
                 </div>
-                <div class="art-more _index">
+                <div class="art-more">
                   <router-link
                     :to="{
                   name: 'article',
@@ -69,7 +87,7 @@
           />
         </el-row>
 
-        <div class="block pagination">
+        <div class="block pagination _index">
           <el-pagination
             background
             layout="prev, pager, next"
@@ -130,6 +148,13 @@ export default {
       currentPage: 1,
       total: 0,
       pageSize: 10,
+      imgs: [
+        "http://browser9.qhimg.com/bdr/__100/t010448c46c1ecf7cab.jpg",
+        "http://browser9.qhimg.com/bdr/__100/t019fd908f724f51900.jpg",
+        "http://browser9.qhimg.com/bdr/__85/t01cd97ec806b712059.jpg",
+        "http://browser9.qhimg.com/bdr/__85/t013a4ed4683039d101.jpg",
+        "http://browser9.qhimg.com/bdr/__85/t01af57b41a16dbe0fb.jpg",
+      ],
     };
   },
   methods: {
@@ -242,5 +267,21 @@ h5 {
 }
 .pagination {
   background-color: #f9f9f9;
+}
+
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 200px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
 }
 </style>

@@ -10,9 +10,9 @@
           class="card-icon"
           src="../assets/images/total.png"
         />
-        <span>{{$t('statistics.title')}}</span>
+        <span class="_title">{{$t('statistics.title')}}</span>
       </div>
-      <div class="text item"><span>{{$t('statistics.articles')}}：{{ totalArticles }}</span></div>
+      <div class="text item _content"><span>{{$t('statistics.articles')}}：{{ totalArticles }}</span></div>
       <div class="text item"><span>{{$t('statistics.views')}}：{{ totalViews }}</span></div>
     </el-card>
   </div>

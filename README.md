@@ -1,6 +1,6 @@
 # Faith-Blog
 
-> 一个基于SpringBoot + Vue开发的轻量级`前后端分离`博客项目。
+> 一个基于SpringBoot + Vue开发的轻量级`前后端分离`博客项目，前端自适应，适配手机端。
 
 > Demo预览地址：http://106.53.60.147/
 
@@ -12,9 +12,10 @@
 
 外链：http://106.53.60.147:9008/%E9%A1%B9%E7%9B%AE/Faith-Blog/](http://106.53.60.147:9008/%E9%A1%B9%E7%9B%AE/Faith-Blog/)
 
-| CN   | ![home](images/cn/cn_home.jpg) | ![home](images/cn/cn_archive.jpg) | ![home](images/cn/cn_about.jpg) | ![home](images/cn/cn_home2.jpg)   | ![home](images/cn/cn_login.jpg) | ![home](images/cn/cn_publish.jpg) |
-| ---- | ------------------------------ | --------------------------------- | ------------------------------- | --------------------------------- | ------------------------------- | --------------------------------- |
-| EN   | ![home](images/en/en_home.jpg) | ![home](images/en/en_about.jpg)   | ![home](images/en/en_login.jpg) | ![home](images/en/en_article.jpg) |                                 |                                   |
+| CN     | ![home](images/cn/cn_home.jpg) | ![home](images/cn/cn_archive.jpg) | ![home](images/cn/cn_about.jpg) | ![home](images/cn/cn_home2.jpg)   | ![home](images/cn/cn_login.jpg) | ![home](images/cn/cn_publish.jpg) |
+| ------ | ------------------------------ | --------------------------------- | ------------------------------- | --------------------------------- | ------------------------------- | --------------------------------- |
+| EN     | ![home](images/en/en_home.jpg) | ![home](images/en/en_about.jpg)   | ![home](images/en/en_login.jpg) | ![home](images/en/en_article.jpg) |                                 |                                   |
+| MOBILE | ![home](images/mobile/1.jpg)   | ![home](images/mobile/2.jpg)      | ![home](images/mobile/3.jpg)    | ![home](images/mobile/4.jpg)      | ![home](images/mobile/5.jpg)    | ![home](images/mobile/6.jpg)      || ![home](images/mobile/7.jpg)      |
 
 
 ## 使用技术：

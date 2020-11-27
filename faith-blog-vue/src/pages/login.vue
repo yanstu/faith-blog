@@ -1,6 +1,6 @@
 <!-- 组件说明 -->
 <template>
-  <div class="login-container">
+  <el-row type="flex" :xs="24" class="login-container">
     <el-form
       :model="ruleForm"
       :rules="rules"
@@ -13,6 +13,7 @@
       <h3 class="title">{{$t('login.title')}}</h3>
       <el-form-item prop="username">
         <el-input
+          class="_index"
           type="text"
           v-model="ruleForm.username"
           auto-complete="off"
@@ -21,6 +22,7 @@
       </el-form-item>
       <el-form-item prop="password">
         <el-input
+          class="_index"
           type="password"
           v-model="ruleForm.password"
           auto-complete="off"
@@ -29,18 +31,19 @@
       </el-form-item>
       <el-checkbox
         v-model="checked"
-        class="rememberme"
+        class="rememberme _index"
       >{{$t('login.remember')}}</el-checkbox>
       <el-form-item style="width:100%;">
         <el-button
+          class="_index"
           type="primary"
-          style="width:100%;"
+          style="width:100%;z-index:99;position:relative;"
           @click="handleSubmit"
           :loading="logining"
         >{{$t('login.login')}}</el-button>
       </el-form-item>
     </el-form>
-  </div>
+  </el-row>
 </template>
 
 <script>

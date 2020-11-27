@@ -23,7 +23,7 @@
               v-for="(title,inx) in month"
               :key="inx"
             >
-              <el-link
+              <el-link class="_index" :underline="false"
                 :href="'/article/'+title.id"
                 target="_blank"
               >
