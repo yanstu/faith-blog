@@ -2,15 +2,15 @@
   <div>
     <el-menu
       :default-active="activeIndex"
-      class="d-flex"
+      class="d-flex _index"
       mode="horizontal"
       router="true"
       type="flex"
     >
       <el-menu-item class="el-menu-demo">Faithx's Blog</el-menu-item>
-      <el-menu-item index="/home"><i class="el-icon-s-home"></i>{{$t("header.home")}}</el-menu-item>
-      <el-menu-item index="/archive"><i class="el-icon-folder-opened"></i>{{$t("header.archive")}}</el-menu-item>
-      <el-menu-item index="/about"><i class="el-icon-location-information"></i>{{$t("header.about")}}</el-menu-item>
+      <el-menu-item class="wapnone" index="/home"><i class="el-icon-s-home"></i>{{$t("header.home")}}</el-menu-item>
+      <el-menu-item class="wapnone" index="/archive"><i class="el-icon-folder-opened"></i>{{$t("header.archive")}}</el-menu-item>
+      <el-menu-item class="wapnone" index="/about"><i class="el-icon-location-information"></i>{{$t("header.about")}}</el-menu-item>
       <el-submenu
         class="ml-auto"
         index="/"

@@ -7,8 +7,9 @@ body {
   display: none;
 }
 .d-flex {
-  display: flex !important;
+  display: flex;
 }
+
 .mr-auto {
   margin-right: auto !important;
 }
@@ -22,4 +23,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+._index {
+  z-index: 1;
 }

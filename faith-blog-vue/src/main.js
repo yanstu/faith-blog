@@ -10,11 +10,13 @@ import i18n from './i18n/i18n';
 //markdown编辑器
 import mavonEditor from 'mavon-editor';
 import moment from 'moment/moment';
+import VueParticles from 'vue-particles'  
 
 //样式、js
 import './plugins/axios.js';
 import './assets/css/style.css';
 import './assets/css/scroll.css';
+import './assets/css/media.css';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
 import 'mavon-editor/dist/css/index.css';
@@ -22,7 +24,10 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'moment/moment.js';
 // 路由拦截
 import './plugins/permission.js';
+import  'lib-flexible'
 
+
+Vue.use(VueParticles) 
 Vue.use(mavonEditor);
 Vue.use(Element);
 Vue.prototype.$axios = axios;

@@ -14,6 +14,26 @@
         <router-view></router-view>
       </el-col>
     </el-row>
+    <vue-particles
+      style="position: fixed;top: 0;width:100%"
+      color="#FF00CC"
+      particleOpacity="0.7"
+      particlesNumber="60"
+      shapeType="circle"
+      particleSize="4"
+      linesColor="#000000"
+      linesWidth="1"
+      lineLinked="true"
+      lineOpacity="0.4"
+      linesDistance="100"
+      moveSpeed="2"
+      hoverEffect="true"
+      hoverMode="grab"
+      clickEffect="true"
+      clickMode="push"
+      class="lizi"
+    >
+    </vue-particles>
     <f-footer></f-footer>
   </div>
 </template>
@@ -55,7 +75,8 @@ export default {
 
 <style scoped>
 @import "./assets/font/font.css";
-*,* a{
+*,
+* a {
   font-family: NotoSerifCJKsc;
 }
 #content {

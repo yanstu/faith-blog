@@ -5,10 +5,13 @@
       type="flex"
       justify="space-around"
     >
-      <el-col :span="16">
+      <el-col
+        :span="16"
+        :xs="24"
+      >
 
         <el-row
-          class="art-item"
+          class="art-item _index"
           v-for="blog in blogs"
           :key="blog"
         >
@@ -26,13 +29,11 @@
               </router-link>
             </h5>
             <el-row class="art-info d-flex align-items-center justify-content-start">
-              <div
-                class="art-time"
-                v-format="'YYYY年MM月DD日'"
-              ><i class="el-icon-time"></i> {{ $t('home.time') }}{{blog.created | moment}}</div>
+              <div class="art-time"><i class="el-icon-time"></i> {{ $t('home.time') }}{{blog.created | moment}}</div>
               <div class="art-time"><i class="fa fa-eye"></i> {{ blog.views }}{{ $t('home.views') }}</div>
-              <div class="art-time"><i class="fa fa-tags"> </i> 
-                 <el-tag size="mini"> swagger2</el-tag>
+              <div class="art-time"><i class="fa fa-tags"> </i>
+                &nbsp;
+                <el-tag size="mini">java</el-tag>
               </div>
             </el-row>
             <el-row class="art-body">
@@ -47,7 +48,7 @@
                 >
                   {{ blog.description }}
                 </div>
-                <div class="art-more">
+                <div class="art-more _index">
                   <router-link
                     :to="{
                   name: 'article',
@@ -83,7 +84,7 @@
       </el-col>
       <el-col
         :span="5"
-        class="hidden-sm-and-down"
+        class="hidden-sm-and-down _index"
         id="side"
       >
         <div class="item">

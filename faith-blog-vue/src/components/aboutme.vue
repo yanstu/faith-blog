@@ -1,6 +1,6 @@
 <template>
   <div class="friend">
-    <el-card class="box-card">
+    <el-card class="box-card ">
       <el-avatar
         shape="square"
         :size="230"
