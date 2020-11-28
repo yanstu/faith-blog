@@ -35,7 +35,7 @@
         index="/"
       >
         <template slot="title">
-          <i class="el-icon-user-solid"></i>
+          <i class='el-icon-user-solid'></i>
           {{ user.nickname }}
         </template>
         <el-menu-item
@@ -142,11 +142,12 @@
 export default {
   data() {
     return {
+      temp: "",
       drawer: false,
       activeIndex: "/home",
       hasLogin: false,
       user: {
-        nickname: "请先登录",
+        nickname: "",
       },
     };
   },
@@ -187,9 +188,11 @@ export default {
     },
   },
   created() {
-    if (this.$store.getters.getUser.username) {
+    if (this.$store.getters.getUser) {
       this.user.nickname = this.$store.getters.getUser.nickname;
       this.hasLogin = true;
+    } else {
+      this.user.nickname = this.$t("header.tis");
     }
   },
 };

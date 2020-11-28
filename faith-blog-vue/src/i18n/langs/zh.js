@@ -10,30 +10,31 @@ module.exports = {
     language: '语言',
     chinaese: '中文',
     english: 'English',
+    tis: '请先登录',
   },
   login: {
-	  title: '博客登录',
-	  username: '账户名',
-	  password: '密码',
-	  remember: '记住密码',
-	  login: '登录',
-	  passwordtis: '请输入你的密码',
-	  usernametis: '请输入你的用户名',
-	  usernametis2: '长度在3到16个字符',
+    title: '博客登录',
+    username: '账户名',
+    password: '密码',
+    remember: '记住密码',
+    login: '登录',
+    passwordtis: '请输入你的密码',
+    usernametis: '请输入你的用户名',
+    usernametis2: '长度在3到16个字符',
   },
   statistics: {
     title: '博客统计',
     articles: '文章数量',
-    views: '文章总浏览量'
+    views: '文章总浏览量',
   },
   home: {
     readMore: '阅读全文',
     views: '次浏览',
-		time: '发表于：'
+    time: '发表于：',
   },
-	aboutme: {
-		title: '关于博主'
-	},
+  aboutme: {
+    title: '关于博主',
+  },
   tag: {
     tag: '标签',
   },
@@ -41,12 +42,10 @@ module.exports = {
     friend: '友链',
     exchange: '互换友链',
   },
-  archive: {
-    
-  },
+  archive: {},
   about: {
     source: '开源地址',
-		links: '申请友链',
+    links: '申请友链',
     contactMe: '给我留言',
     yourName: '称谓',
     email: '邮箱',
