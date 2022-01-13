@@ -1,3 +1,5 @@
+![faith-blog](https://socialify.git.ci/yanstu/faith-blog/image?description=1&font=Inter&forks=1&language=1&owner=1&pattern=Plus&stargazers=1&theme=Light)
+
 # Faith-Blog
 
 > 一个基于SpringBoot + Vue开发的轻量级`前后端分离`博客项目，前端自适应，适配手机端。
